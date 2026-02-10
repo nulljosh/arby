@@ -11,13 +11,14 @@ graph TD
     CheckCredit -->|No| BuildCredit[Build Credit First]
     CheckCredit -->|Yes| Advanced[Advanced Strategies]
 
+    BuildCredit --> AuthUser[Authorized User on Family Card<br/>+30-80 pts, zero risk to them]
     BuildCredit --> SecuredCard[Secured Credit Card]
-    BuildCredit --> AuthUser[Authorized User on Family Card]
     BuildCredit --> CreditBuilder[Credit Builder Loan]
 
+    AuthUser --> FastTrack[Fastest Path to Good Credit]
     SecuredCard --> WaitTime[Wait 6-12 Months]
-    AuthUser --> WaitTime
     CreditBuilder --> WaitTime
+    FastTrack --> CheckCredit
     WaitTime --> CheckCredit
 
     Advanced --> LowRisk[Low Risk / Quick Wins]
@@ -49,6 +50,8 @@ graph TD
     style BuildCredit fill:#fff9c4
     style Advanced fill:#f3e5f5
     style HighRisk fill:#ffccbc
+    style AuthUser fill:#c8e6c9
+    style FastTrack fill:#c8e6c9
 ```
 
 ## Decision Tree: Which Strategy Is Right For You?
@@ -76,10 +79,19 @@ graph LR
 
 **Basic concept:** Use someone with good credit → get cashback → pay immediately → they owe you = free money from rewards (1-5%).
 
-**Better alternative:** Get added as **authorized user** on their card:
-- Their credit history helps YOUR score
-- Safest option
-- No cash needed
+**Reality check:** Routing purchases through someone else's card for cashback splitting is mathematically meh. On $500/month you'd earn $5-25 to split. The coordination overhead isn't worth it — especially the mental load. Only worth it on high-category spending you'd do anyway (e.g. 5% groceries).
+
+### The Real Play: Authorized User
+
+Way more valuable than cashback splitting. This is credit building, not pocket change.
+
+- Their card's **full payment history** gets added to your credit report
+- If the card has years of on-time payments, your score can jump **+30-80 points**
+- You don't need to hold or use the physical card
+- They keep full control — can remove you with one phone call
+- **Zero risk to them** — their score isn't affected
+
+**The Pitch:** "You don't give me a card. You don't give me access. Nothing changes for you. You just call the bank and add my name. That's it. It helps me build credit and costs you nothing."
 
 ## Verified Money-Making Strategies
 
@@ -142,8 +154,10 @@ If you have poor/no credit, focus here before churning:
 
 2. **Authorized User on Good Account**
    - Get added to parent/spouse card with good history
-   - Their history reports to your credit
-   - Instant boost to credit age/score
+   - Their full payment history reports to your credit
+   - Instant boost to credit age/score (+30-80 points)
+   - You don't need the physical card — they keep full control
+   - Zero risk to them — one phone call to remove you anytime
 
 3. **Credit Builder Loan**
    - Pay into savings account, build credit
@@ -182,7 +196,7 @@ Once credit improves:
 
 ## Status
 
-All strategies verified as of 2026-02-09. Market conditions change - always verify current offers before executing.
+All strategies verified as of 2026-02-10. Market conditions change - always verify current offers before executing.
 
 ---
 
