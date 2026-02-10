@@ -6,6 +6,28 @@
     <title>Arby - Financial Arbitrage & Money-Making Ideas</title>
     <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
     <style>
+        :root {
+            --bg-primary: #f5f5f7;
+            --bg-card: rgba(255, 255, 255, 0.7);
+            --bg-secondary: #fafafa;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --accent: #0071e3;
+            --shadow: rgba(0, 0, 0, 0.08);
+            --border: #d2d2d7;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #000000;
+            --bg-card: rgba(28, 28, 30, 0.7);
+            --bg-secondary: #1c1c1e;
+            --text-primary: #f5f5f7;
+            --text-secondary: #98989d;
+            --accent: #0a84ff;
+            --shadow: rgba(0, 0, 0, 0.3);
+            --border: #38383a;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,10 +36,17 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: #f5f5f7;
-            color: #1d1d1f;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
-            padding: 40px 20px;
+            padding: 20px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding: 40px 20px;
+            }
         }
 
         .container {
@@ -30,45 +59,121 @@
             margin-bottom: 60px;
         }
 
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 4px 16px var(--shadow);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: transform 0.2s ease;
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .theme-toggle:active {
+            transform: scale(0.95);
+        }
+
         h1 {
-            font-size: 56px;
+            font-size: 36px;
             font-weight: 600;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             letter-spacing: -0.02em;
         }
 
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 56px;
+                margin-bottom: 16px;
+            }
+        }
+
         .subtitle {
-            font-size: 21px;
-            color: #6e6e73;
+            font-size: 17px;
+            color: var(--text-secondary);
             font-weight: 400;
         }
 
+        @media (min-width: 768px) {
+            .subtitle {
+                font-size: 21px;
+            }
+        }
+
         .card {
-            background: white;
+            background: var(--bg-card);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             border-radius: 18px;
-            padding: 40px;
-            margin-bottom: 24px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 16px var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: all 0.3s ease;
+        }
+
+        @media (min-width: 768px) {
+            .card {
+                padding: 40px;
+                margin-bottom: 24px;
+            }
         }
 
         h2 {
-            font-size: 32px;
+            font-size: 24px;
             font-weight: 600;
-            margin-bottom: 20px;
-            margin-top: 10px;
+            margin-bottom: 16px;
+            margin-top: 8px;
+        }
+
+        @media (min-width: 768px) {
+            h2 {
+                font-size: 32px;
+                margin-bottom: 20px;
+                margin-top: 10px;
+            }
         }
 
         h3 {
-            font-size: 24px;
+            font-size: 19px;
             font-weight: 600;
-            margin-top: 32px;
-            margin-bottom: 16px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        @media (min-width: 768px) {
+            h3 {
+                font-size: 24px;
+                margin-top: 32px;
+                margin-bottom: 16px;
+            }
         }
 
         p, li {
-            font-size: 17px;
-            margin-bottom: 12px;
-            color: #1d1d1f;
+            font-size: 15px;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        @media (min-width: 768px) {
+            p, li {
+                font-size: 17px;
+                margin-bottom: 12px;
+            }
         }
 
         ul {
@@ -85,7 +190,7 @@
         }
 
         a {
-            color: #0071e3;
+            color: var(--accent);
             text-decoration: none;
         }
 
@@ -95,10 +200,18 @@
 
         .mermaid {
             text-align: center;
-            margin: 30px 0;
-            padding: 20px;
-            background: #fafafa;
+            margin: 20px 0;
+            padding: 16px;
+            background: var(--bg-secondary);
             border-radius: 12px;
+            overflow-x: auto;
+        }
+
+        @media (min-width: 768px) {
+            .mermaid {
+                margin: 30px 0;
+                padding: 20px;
+            }
         }
 
         .warning {
@@ -117,9 +230,15 @@
         }
 
         .strategy-item {
-            background: #fafafa;
-            padding: 24px;
+            background: var(--bg-secondary);
+            padding: 20px;
             border-radius: 12px;
+        }
+
+        @media (min-width: 768px) {
+            .strategy-item {
+                padding: 24px;
+            }
         }
 
         .strategy-item h3 {
@@ -153,11 +272,19 @@
 
         footer {
             text-align: center;
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 1px solid #d2d2d7;
-            color: #6e6e73;
-            font-size: 15px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        @media (min-width: 768px) {
+            footer {
+                margin-top: 60px;
+                padding-top: 40px;
+                font-size: 15px;
+            }
         }
 
         .highlight {
@@ -175,14 +302,24 @@
         }
 
         .resource-tag {
-            background: #f5f5f7;
+            background: var(--bg-secondary);
             padding: 8px 16px;
             border-radius: 20px;
-            font-size: 15px;
+            font-size: 14px;
+        }
+
+        @media (min-width: 768px) {
+            .resource-tag {
+                font-size: 15px;
+            }
         }
     </style>
 </head>
 <body>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+        <span id="theme-icon">🌙</span>
+    </button>
+
     <div class="container">
         <header>
             <h1>Arby</h1>
@@ -406,10 +543,56 @@ graph LR
     </div>
 
     <script>
+        // Theme toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            const icon = document.getElementById('theme-icon');
+
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            icon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+
+            // Reinitialize mermaid with new theme
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: newTheme === 'dark' ? 'dark' : 'default',
+                themeVariables: newTheme === 'dark' ? {
+                    primaryColor: '#1c1c1e',
+                    primaryTextColor: '#f5f5f7',
+                    primaryBorderColor: '#0a84ff',
+                    lineColor: '#98989d',
+                    secondaryColor: '#2c2c2e',
+                    tertiaryColor: '#3a3a3c'
+                } : {
+                    primaryColor: '#e1f5ff',
+                    primaryTextColor: '#1d1d1f',
+                    primaryBorderColor: '#0071e3',
+                    lineColor: '#6e6e73',
+                    secondaryColor: '#c8e6c9',
+                    tertiaryColor: '#fff9c4'
+                }
+            });
+        }
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('theme-icon').textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+        // Initialize mermaid with current theme
         mermaid.initialize({
             startOnLoad: true,
-            theme: 'default',
-            themeVariables: {
+            theme: savedTheme === 'dark' ? 'dark' : 'default',
+            themeVariables: savedTheme === 'dark' ? {
+                primaryColor: '#1c1c1e',
+                primaryTextColor: '#f5f5f7',
+                primaryBorderColor: '#0a84ff',
+                lineColor: '#98989d',
+                secondaryColor: '#2c2c2e',
+                tertiaryColor: '#3a3a3c'
+            } : {
                 primaryColor: '#e1f5ff',
                 primaryTextColor: '#1d1d1f',
                 primaryBorderColor: '#0071e3',
