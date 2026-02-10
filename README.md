@@ -2,6 +2,76 @@
 
 Collection of verified strategies for generating extra income through arbitrage and financial optimization.
 
+## Strategy Flow
+
+```mermaid
+graph TD
+    Start[Starting Point] --> CheckCredit{Have Good Credit?}
+
+    CheckCredit -->|No| BuildCredit[Build Credit First]
+    CheckCredit -->|Yes| Advanced[Advanced Strategies]
+
+    BuildCredit --> SecuredCard[Secured Credit Card]
+    BuildCredit --> AuthUser[Authorized User on Family Card]
+    BuildCredit --> CreditBuilder[Credit Builder Loan]
+
+    SecuredCard --> WaitTime[Wait 6-12 Months]
+    AuthUser --> WaitTime
+    CreditBuilder --> WaitTime
+    WaitTime --> CheckCredit
+
+    Advanced --> LowRisk[Low Risk / Quick Wins]
+    Advanced --> MedRisk[Medium Risk / Higher Returns]
+    Advanced --> HighRisk[Advanced / Careful Execution]
+
+    LowRisk --> BankBonus[Bank Account Bonuses<br/>$200-500 per account]
+    LowRisk --> Cashback[Cashback Stacking<br/>5-10% effective rate]
+    LowRisk --> GiftCards[Discounted Gift Cards<br/>10-20% savings]
+
+    MedRisk --> Churning[Credit Card Churning<br/>50k-100k points per card]
+    MedRisk --> BalanceTransfer[0% APR Balance Transfer<br/>Save on interest]
+    MedRisk --> Warranty[Extended Warranty Benefits<br/>Free protection]
+
+    HighRisk --> Manufactured[Manufactured Spending<br/>High reward, high risk]
+    HighRisk --> RetailArb[Retail Arbitrage<br/>$500-2000/mo part-time]
+
+    BankBonus --> Profit[💰 Profit]
+    Cashback --> Profit
+    GiftCards --> Profit
+    Churning --> Profit
+    BalanceTransfer --> Profit
+    Warranty --> Profit
+    Manufactured --> Profit
+    RetailArb --> Profit
+
+    style Start fill:#e1f5ff
+    style Profit fill:#c8e6c9
+    style BuildCredit fill:#fff9c4
+    style Advanced fill:#f3e5f5
+    style HighRisk fill:#ffccbc
+```
+
+## Decision Tree: Which Strategy Is Right For You?
+
+```mermaid
+graph LR
+    Q1{Credit Score?} -->|Below 600| Build[Focus on Credit Building]
+    Q1 -->|600-700| Medium[Bank Bonuses + Cashback]
+    Q1 -->|Above 700| All[All Strategies Available]
+
+    Q2{Time Available?} -->|1-2 hrs/week| Passive[Passive: Cashback + Bank Bonuses]
+    Q2 -->|5-10 hrs/week| Active[Active: Add Churning]
+    Q2 -->|15+ hrs/week| FullTime[Full-Time: Retail Arbitrage]
+
+    Q3{Risk Tolerance?} -->|Low| Safe[Bank Bonuses + Cashback Only]
+    Q3 -->|Medium| Balanced[Add Churning + 0% APR]
+    Q3 -->|High| Aggressive[All Strategies Including MS]
+
+    style Build fill:#ffccbc
+    style Passive fill:#c8e6c9
+    style Safe fill:#c8e6c9
+```
+
 ## Credit Card Arbitrage
 
 **Basic concept:** Use someone with good credit → get cashback → pay immediately → they owe you = free money from rewards (1-5%).
