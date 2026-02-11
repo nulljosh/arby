@@ -36,7 +36,7 @@ graph TD
     HighRisk --> Manufactured[Manufactured Spending<br/>High reward, high risk]
     HighRisk --> RetailArb[Retail Arbitrage<br/>$500-2000/mo part-time]
 
-    BankBonus --> Profit[💰 Profit]
+    BankBonus --> Profit[ Profit]
     Cashback --> Profit
     GiftCards --> Profit
     Churning --> Profit
